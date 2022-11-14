@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "email": "ronak@yopmail.com",
+            "password": "Test@123",
+            "role": "super_admin",
+            "permissions": [ "user_management", "dashboard", "orders", "products", "payments" ]
+        },
+        {
+            "email": "sandy@yopmail.com",
+            "password": "Test@123",
+            "role": "admin",
+            "permissions": [ "dashboard", "orders", "products" ]
+        },
+        {
+            "email": "raj@yopmail.com",
+            "password": "Test@123",
+            "role": "manager",
+            "permissions": [ "dashboard", "orders", "products", "payments"]
+        },        
+        {
+            "email": "modi@yopmail.com",
+            "password": "Test@123",
+            "role": "user",
+            "permissions": [ "dashboard", "products"]
+        }        
+    ]
+}
