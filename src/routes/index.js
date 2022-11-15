@@ -7,7 +7,7 @@ import { authRoutes, privateRoutes, publicRoute } from './route';
 const PublicLayout = lazy(() => retry(() => import('../presentation/layouts/PublicLayout')));
 const PrivateLayout = lazy(() => retry(() => import('../presentation/layouts/PrivateLayout')));
 const AuthLayout = lazy(() => retry(() => import('../presentation/layouts/AuthLayout')));
-const Error = lazy(() => retry(() => import('../presentation/Error')));
+const NotFound = lazy(() => retry(() => import('../presentation/NotFound')));
 
 const Routing = ({ baseData, ...props }) => {
   const { data } = useContext(MyContext)
@@ -29,7 +29,7 @@ const Routing = ({ baseData, ...props }) => {
           privateRoutes(data?.role).map(({ id: key, ...otherData }) => <Route index key={key} {...otherData} />)
         }
       </Route>
-      <Route path="*" element={<Error />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

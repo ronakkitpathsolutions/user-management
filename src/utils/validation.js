@@ -8,14 +8,15 @@ const invalidErrors = {
     password: "Invalid password.",
 }
 
-const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
 
 export const handleValidation = (name, value) => {
     switch (name) {
         case 'email':
             if(!value || value.trim() === ""){
                 return requiredErrors[name]
-            }else if(!emailRegex.test(value)){
+            }else if(!value.toLowerCase().match(emailRegex)){
                 return invalidErrors[name]
             }else return null
         case 'password':

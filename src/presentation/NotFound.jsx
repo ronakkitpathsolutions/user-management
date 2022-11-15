@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Error = () => {
+const NotFound = () => {
   return (
     <div>404 Not found</div>
   )
 }
 
-export default Error
+export default NotFound
