@@ -16,7 +16,7 @@ const CustomNavBar = ({ logo, defaultLink, ...props }) => {
                     <Nav className="me-auto my-2 my-lg-0">
                         {publicRoute().map(({ id, name, path }) => <NavLink key={id} className="nav-link" to={path} >{name}</NavLink>)}
                         {isLogged ?
-                            privateRoutes(data?.role).map(({ id, name, path }) => <NavLink key={id} className="nav-link" to={path} >{name}</NavLink>) :
+                            privateRoutes(data?.role).filter(val => !val.isHideNavbar).map(({ id, name, path }) => <NavLink key={id} className="nav-link" to={path} >{name}</NavLink>) :
                             authRoutes().filter(val => !val.useAsLink).map(({ id, name, path }) => <NavLink key={id} className="nav-link" to={path} >{name}</NavLink>)
                         }
                     </Nav>

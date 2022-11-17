@@ -5,6 +5,7 @@ const Home = lazy(() => retry(() => import('../presentation/Home')))
 const Login = lazy(() => retry(() => import('../presentation/Login')))
 const Dashboard = lazy(() => retry(() => import('../presentation/Dashboard')))
 const UserManagement = lazy(() => retry(() => import('../presentation/UserManagement')))
+const Permissions = lazy(() => retry(() => import('../presentation/Permissions')))
 const ForgotPassword = lazy(() => retry(() => import('../presentation/ForgotPassword')))
 
 export const Routes = [
@@ -30,6 +31,7 @@ export const Routes = [
         name: "Forgot Password",
         element: <ForgotPassword/>,
         isAuthRoute: true,
+        isHideNavbar: true,
         useAsLink: true,
         exact: true
     },
@@ -47,6 +49,15 @@ export const Routes = [
         name: "User Management",
         element: <UserManagement/>,
         role: ['super_admin'],
+        exact: true
+    },
+    {
+        id: "use_permissions",
+        path: "/user-permission/:id",
+        name: "Permissions",
+        element: <Permissions/>,
+        role: ['super_admin'],
+        isHideNavbar: true,
         exact: true
     }
 ]

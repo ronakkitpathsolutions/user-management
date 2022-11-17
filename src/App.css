@@ -7,8 +7,10 @@ body{
   background-color: #fcf0ffd3;
 }
 
-/*login component*/
-
 .login-component{
   height: calc(100vh - 56px);
+}
+.user_card{
+  cursor: pointer;
+  height: 200px;
 }
